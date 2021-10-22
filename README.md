@@ -107,6 +107,12 @@ PgSQL `array_to_string(array, delimiter)`
 > *[Answer](https://stackoverflow.com/a/40928412/720164) from Craig Ringer on Stackoverflow: "Remove double quotes from the return of a function in PostgreSQL"*
 
 
+## Table Primary Key
+After the fact:
+
+```sql
+ALTER TABLE distributors ADD PRIMARY KEY (dist_id);
+```
 
 ## Indexes
 
