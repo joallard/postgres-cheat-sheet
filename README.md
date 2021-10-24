@@ -106,20 +106,27 @@ PgSQL `array_to_string(array, delimiter)`
 >
 > *[Answer](https://stackoverflow.com/a/40928412/720164) from Craig Ringer on Stackoverflow: "Remove double quotes from the return of a function in PostgreSQL"*
 
-
-## Table Primary Key
-After the fact:
+## Schema Editing
 
 ```sql
 ALTER TABLE distributors ADD PRIMARY KEY (dist_id);
+
+ALTER TABLE distributors RENAME TO suppliers;
+
+
+
+ALTER TABLE foo
+    ALTER COLUMN foo_timestamp SET DATA TYPE timestamp with time zone
+    USING timestamp with time zone 'epoch' + foo_timestamp * interval '1 second' -- if needed
+;
+
+-- short: ALTER column TYPE newtype
 ```
 
-## Indexes
-
-### Create
-
+### Create Index
 ```sql
 CREATE INDEX tbl_col_idx ON table_name (column_name);
+ -- [USING] method
 ```
 
 
